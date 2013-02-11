@@ -4,7 +4,7 @@
  * ##############################################################################################
  * ##############################################################################################
  * 
- * SERIOUSLY IMPORTANT :: Do **NOT** use this file as is on a Production Server. 
+ * SERIOUSLY IMPORTANT :: Do **NOT** use this file "as is" on a Production Server. 
  * 
  * This file is to be used for development purposes only until tested on your box (server) due 
  * to the fact that there in NO conditional wraps nor validation against the response.
