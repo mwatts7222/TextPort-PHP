@@ -1,15 +1,22 @@
 <?php
 
 /**
- * IMPORTANT :: Do **NOT** use this file as is on a Production Server. 
+ * ##############################################################################################
+ * ##############################################################################################
  * 
- * This file is for initial testing, you will need to access the response received from 
- * the webservice to validate that a message was sent ect.....
+ * SERIOUSLY IMPORTANT :: Do **NOT** use this file as is on a Production Server. 
+ * 
+ * This file is to be used for development purposes only until tested on your box (server) due 
+ * to the fact that there in NO conditional wraps nor validation against the response.
+ * 
+ * ##############################################################################################
+ * ##############################################################################################
  * 
  * The process for consuming all three methods has been supplied in this file but please only 
  * consume one method at a time. For best results please use the command line for consumption.
  * 
- * Should you have any questions then do not hesitate to drop me a line on mwatts7222@gmail.com.
+ * Should you have any questions or need assistance with integration, 
+ * then do not hesitate to drop me a line on mwatts7222@gmail.com.
  */
 
 $client = new SoapClient('http://www.textport.com/WebServices/TextPortSMS.asmx?WSDL');
