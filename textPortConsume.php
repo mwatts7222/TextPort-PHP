@@ -45,6 +45,11 @@ $verifyAuthentication = array (
 
 );
 
+/**
+ * It is highly recommended that "one" validates that the webservice is "up and running"
+ * before consuming any other methods for obvious reasons. 
+ */
+
 ## Consume the webservice method "Ping" to verify the webservice status. 
 $result = $client->__call('Ping', array ('Ping' => $verifyAuthentication));
 
@@ -53,6 +58,10 @@ $result = $client->__call('VerifyAuthentication', array ('VerifyAuthentication' 
 
 ## Consume the webservice method SendMessages to send text messages.
 $result = $client->__call('SendMessages', array ('SendMessages' => $sendMessages));
+
+/**
+ * This is where you would put some checks against the response to validate that the message was actually sent to our recipients. 
+ */
 
 ## Dump the result.
 ##var_dump($result);
