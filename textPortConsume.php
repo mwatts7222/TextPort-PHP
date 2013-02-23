@@ -4,13 +4,17 @@
  * ##############################################################################################
  * ##############################################################################################
  * 
- * SERIOUSLY IMPORTANT :: Do **NOT** use this file "as is" on a Production Server. 
+ * VERY IMPORTANT :: Please do **NOT** use this file "as is" on a Production Server. 
  * 
  * This file is to be used for development purposes only until tested on your box (server) due 
  * to the fact that there in NO conditional wraps nor validation against the response.
  * 
  * ##############################################################################################
  * ##############################################################################################
+ */
+ 
+/** 
+ * Methods used for consuming the TextPort API.
  * 
  * The process for consuming all three methods has been supplied in this file but please only 
  * consume one method at a time. For best results please use the command line for consumption.
@@ -24,40 +28,38 @@ $client = new SoapClient('http://www.textport.com/WebServices/TextPortSMS.asmx?W
 ## Get a list of methods that are available for consumption. Uncomment the line below to list the messages in the call.
 ##var_dump($client->__getFunctions()); 
 
-$sendMessages = array(
-
-  "messagesList" => array ( 
+$sendMessages = [
+  "messagesList" => [ 
   	"UserName" => "yourUsername",
 		"Password" => "yourPassword",
-		"Messages" => array ( 
+		"Messages" => [ 
 			"TextPortSMSMessage" => array (
 				"CountryCode" => "US",
 				"MobileNumber" => "000000000",
 				"MessageText" => "Hey there cowboy"
-			)	
-		)
-	)
-);
+			]	
+		]
+	]
+];
 
-$verifyAuthentication = array ( 
+$verifyAuthentication = [ 
 	"userName" => "userName",
 	"password" => "passWord"
+];
 
-);
-
-/**
- * It is highly recommended that "one" validates that the webservice is "up and running"
- * before consuming any other methods for obvious reasons. 
- */
+##
+## It is highly recommended that "one" validates that the webservice is "up and running"
+## before consuming any other methods for obvious reasons. 
+##
 
 ## Consume the webservice method "Ping" to verify the webservice status. 
-$result = $client->__call('Ping', array ('Ping' => $verifyAuthentication));
+$pingRequest = $client->__call('Ping', array ('Ping' => $verifyAuthentication));
 
 ## Consume the webservice method VerifyAuthentication to validate that a user account exists on the system.
-$result = $client->__call('VerifyAuthentication', array ('VerifyAuthentication' => $verifyAuthentication));
+$verfiyAuthentication = $client->__call('VerifyAuthentication', array ('VerifyAuthentication' => $verifyAuthentication));
 
 ## Consume the webservice method SendMessages to send text messages.
-$result = $client->__call('SendMessages', array ('SendMessages' => $sendMessages));
+$sendMessages = $client->__call('SendMessages', array ('SendMessages' => $sendMessages));
 
 /**
  * This is where you would put some checks against the response to validate that the message was actually sent to our recipients. 
