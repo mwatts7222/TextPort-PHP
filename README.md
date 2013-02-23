@@ -1,7 +1,9 @@
 TextPort-PHP
 ============
 
-Examples of how to consume the magical TextPort API utilising PHP. Python and Perl comming soon. 
+Enclosed are examples of how to consume the magical TextPort API utilising PHP.
+
+Box or Server requirements are PHP v 5.4.11 
 
 A valid Username and Password is required as a minimum to consume the VerifyAuthentication and SendMessages methods. For more information please visit :: http://www.textport.com/WebServices/
 
